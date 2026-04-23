@@ -1,14 +1,14 @@
 FROM python:3.8-slim-buster
 
-# Install git
-RUN apt-get update && apt-get install -y git && apt-get clean
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Set working dir
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends git ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
-# Copy start script
 COPY start.sh ./start.sh
 RUN chmod +x start.sh
 
-# Run bot
 CMD ["bash", "start.sh"]
