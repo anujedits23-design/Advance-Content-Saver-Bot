@@ -8,6 +8,7 @@ class Config:
     DATABASE_URI = environ.get("DATABASE", "mongodb+srv://Anujedit:Anujedit@cluster0.7cs2nhd.mongodb.net/?appName=Cluster0")
     DATABASE_NAME = environ.get("DATABASE_NAME", "forward-bot")
     BOT_OWNER_ID = [int(id) for id in environ.get("BOT_OWNER_ID", '7892805795').split()]
+    PORT = environ.get('PORT', '8081')
 
 class temp(object): 
     lock = {}
