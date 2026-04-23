@@ -70,9 +70,9 @@ async def _batch(event):
                 return
             batch.append(f'{event.sender_id}')
             cd = await conv.send_message("**Batch process ongoing...**\n\nProcess completed: ", 
-                                    buttons=[[Button.url("Join Channel", url="http://t.me/dev_gagan")]])
+                                    buttons=[[Button.url("Join Channel", url="https://t.me/anujeditbyak")]])
             co = await run_batch(userbot, Bot, event.sender_id, cd, _link) 
-            try: 
+            try:
                 if co == -2:
                     await Bot.send_message(event.sender_id, "Batch successfully completed!")
                     await cd.edit(f"**Batch process ongoing.**\n\nProcess completed: {value} \n\n Batch successfully completed! ")
@@ -122,7 +122,7 @@ async def run_batch(userbot, client, sender, countdown, link):
             await get_bulk_msg(userbot, client, sender, link, integer)
             protection = await client.send_message(sender, f"Sleeping for `{timer}` seconds to avoid Floodwaits and Protect account!")
             await countdown.edit(count_down, 
-                                 buttons=[[Button.url("Join Channel", url="https://t.me/dev_gagan")]])
+                                 buttons=[[Button.url("Join Channel", url="https://t.me/anujeditbyak")]])
             await asyncio.sleep(timer)
             await protection.delete()
         except IndexError as ie:
@@ -145,20 +145,20 @@ async def run_batch(userbot, client, sender, countdown, link):
                     #print(e)
                     logger.info(e)
                     if countdown.text != count_down:
-                        await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="http://t.me/dev_gagan")]])
+                        await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/anujeditbyak")]])
         except Exception as e:
             #print(e)
             logger.info(e)
             await client.send_message(sender, f"An error occurred during cloning, batch will continue.\n\n**Error:** {str(e)}")
             if countdown.text != count_down:
-                await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/dev_gagan")]])
+                await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/anujeditbyak")]])
         n = i + 1
         if n == len(ids):
             return -2
 
 C = "/cancel"
-START_PIC = "https://graph.org/file/da97ceca70e55983b4891.png"
-TEXT = "👋 Hi, This is 'Paid Restricted Content Saver' bot Made with ❤️ by __**Team SPY**__."
+START_PIC = "https://o.uguu.se/lZnGDHRh.jpg"
+TEXT = "👋 Hi, This is 'Paid Restricted Content Saver' bot Made with ❤️ by __**Anuj**__."
 
 @gagan.on(events.NewMessage(pattern=f"^{C}"))
 async def start_command(event):
@@ -166,7 +166,7 @@ async def start_command(event):
     buttons = [
         [Button.inline("Cancel", data="cancel"),
          Button.inline("Cancel", data="cancel")],
-        [Button.url("Join Channel", url="https://telegram.dog/dev_gagan")]
+        [Button.url("Join Channel", url="https://t.me/anujeditbyak")]
     ]
 
     # Sending photo with caption and buttons
