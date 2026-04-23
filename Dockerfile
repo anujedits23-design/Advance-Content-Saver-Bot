@@ -1,12 +1,14 @@
 FROM python:3.8-slim-buster
 
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
+# Install git
+RUN apt-get update && apt-get install -y git && apt-get clean
 
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN anujedits23-design/Advance-Content-Saver-Bot
-WORKDIR /Advance-Content-Saver-Bot
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"] 
+# Set working dir
+WORKDIR /app
+
+# Copy start script
+COPY start.sh ./start.sh
+RUN chmod +x start.sh
+
+# Run bot
+CMD ["bash", "start.sh"]
